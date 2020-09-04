@@ -36,8 +36,6 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-
 import org.onebusaway.android.R;
 import org.onebusaway.android.io.elements.ObaArrivalInfo;
 import org.onebusaway.android.io.elements.OccupancyState;
