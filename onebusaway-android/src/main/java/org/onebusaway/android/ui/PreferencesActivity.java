@@ -46,7 +46,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.microsoft.embeddedsocial.sdk.EmbeddedSocial;
 
 import org.onebusaway.android.BuildConfig;
 import org.onebusaway.android.R;
@@ -171,26 +170,6 @@ public class PreferencesActivity extends PreferenceActivity
 
         mAboutPref = findPreference(getString(R.string.preferences_key_about));
         mAboutPref.setOnPreferenceClickListener(this);
-
-        if (EmbeddedSocialUtils.isSocialEnabled()) {
-            Preference socialPref = findPreference(getString(R.string.preference_key_social));
-
-            if (EmbeddedSocial.isSignedIn()) {
-                socialPref.setSummary(R.string.preferences_screen_social_summary_signed_in);
-            }
-
-            socialPref.setOnPreferenceClickListener(preference -> {
-                ObaAnalytics.reportUiEvent(mFirebaseAnalytics,
-                        getString(R.string.analytics_label_button_press_social_settings),
-                        null);
-
-                EmbeddedSocial.launchOptionsActivity(PreferencesActivity.this);
-                return true;
-            });
-        } else {
-            // Social is not enabled so don't show related preferences
-            getPreferenceScreen().removePreference(findPreference(getString(R.string.preference_key_social_category)));
-        }
 
         SharedPreferences settings = Application.getPrefs();
         mAutoSelectInitialValue = settings
