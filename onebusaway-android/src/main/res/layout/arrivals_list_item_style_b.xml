@@ -104,7 +104,7 @@
                             android:contentDescription="@string/route_info_context_showonmap"
                             android:maxHeight="25dp"
                             android:maxWidth="25dp"
-                            android:layout_toLeftOf="@+id/route_discussion"
+                            android:layout_toLeftOf="@+id/route_more_info"
                             android:layout_marginLeft="10dp"/>
 
                     <ImageButton
