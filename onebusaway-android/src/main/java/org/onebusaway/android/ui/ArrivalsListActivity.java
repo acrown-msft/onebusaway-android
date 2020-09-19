@@ -49,6 +49,7 @@ public class ArrivalsListActivity extends AppCompatActivity {
         public Builder(Context context, String stopId) {
             mContext = context;
             mIntent = new Intent(context, ArrivalsListActivity.class);
+            mIntent.setData(Uri.withAppendedPath(ObaContract.Stops.CONTENT_URI, stopId));
         }
 
         /**
