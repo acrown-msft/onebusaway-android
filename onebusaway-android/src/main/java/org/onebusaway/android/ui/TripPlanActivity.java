@@ -260,16 +260,6 @@ public class TripPlanActivity extends AppCompatActivity implements TripRequest.C
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            // Ensure the software and hardware back buttons have the same behavior
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onTripRequestReady() {
 
         // Remove results fragment if it exists

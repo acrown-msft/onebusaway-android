@@ -43,13 +43,7 @@
     the HomeActivity's onCreate() method-->
     <!--<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>-->
 
-    <uses-sdk tools:overrideLibrary="net.openid.appauth,
-        android.support.customtabs,
-        com.microsoft.embeddedsocial.autorest,
-        com.microsoft.embeddedsocial.sdk"/>
-
     <application
-        tools:replace="android:allowBackup"
         android:allowBackup="false"
         android:name="org.onebusaway.android.app.Application"
         android:icon="@mipmap/ic_launcher"
@@ -286,12 +280,6 @@
         <receiver
             android:name=".nav.FeedbackReceiver"
             android:enabled="true">
-        </receiver>
-        <!-- Receiver for restricted profiles -->
-        <receiver android:name=".util.GetRestrictionsReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.GET_RESTRICTION_ENTRIES" />
-            </intent-filter>
         </receiver>
 
         <receiver android:name=".directions.realtime.RealtimeWakefulReceiver">
